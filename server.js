@@ -19,7 +19,7 @@ io.on('connection', (socket) => {
 })
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, './index.html'));
 });
 
 setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
