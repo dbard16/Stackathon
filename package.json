@@ -7,7 +7,7 @@
     "postinstall": "webpack & node ./server/db/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "start:dev": "webpack -w & DATABASE_URL=postgres://localhost/stackathon nodemon server --ignore Browser/ --ignore public/",
+    "start:dev": "webpack -w & DATABASE_URL=postgres://localhost/stackathon nodemon server --ignore client/ --ignore public/",
     "seed": "DATABASE_URL=postgres://localhost/stackathon node ./server/db/seed.js"
   },
   "keywords": [],

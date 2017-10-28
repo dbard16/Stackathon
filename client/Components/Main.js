@@ -9,6 +9,7 @@ export default class Main extends Component {
   render () {
     return (
      <div>
+     <h1> Dan's Choose Your Own Adventure Adventure! </h1>
       <Template />
      </div>
     );

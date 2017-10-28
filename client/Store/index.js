@@ -11,4 +11,5 @@ const store = createStore(reducer, applyMiddleware(thunkMiddleware, loggerMidlew
 
 export default store
 
+export * from './currentLevel';
 //export * from component from everything

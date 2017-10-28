@@ -21914,6 +21914,11 @@ var Main = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          ' Dan\'s Choose Your Own Adventure Adventure! '
+        ),
         _react2.default.createElement(_Template2.default, null)
       );
     }

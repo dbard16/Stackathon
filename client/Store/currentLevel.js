@@ -1,4 +1,5 @@
 import axios from 'axios';
+import socket from '../socket';
 
 const GET_LEVEL = 'GET_LEVEL';
 
@@ -13,7 +14,10 @@ export const fetchLevel = (id) => {
   return dispatch => {
     return axios.get(`/api/levels/${id}`)
     .then(res => res.data)
-    .then(level => dispatch(getLevel(level)));
+    .then(level => {
+      dispatch(getLevel(level))
+      socket.emit('level-change', level)
+    });
   }
 }
 const initialState = fetchLevel(0);
