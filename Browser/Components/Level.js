@@ -27,9 +27,19 @@ export default class Level extends Component {
     this.fetchLevel(levelId)
   }
 
+  componentDidUpdate(prevProps, prevState) {
+
+    if(prevState !== undefined){
+      if(prevState.level.id !== this.state.level.id) {
+        this.props.changeLevel(this.state.level.id);
+      }
+    }
+  }
+
   handleClick(text, level){
     alert(text);
     this.fetchLevel(level)
+
   }
 
 

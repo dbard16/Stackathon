@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Level from './Level';
+// import Level from './Level';
+import Template from './Template'
 
 export default class Main extends Component {
 
@@ -8,7 +9,7 @@ export default class Main extends Component {
   render () {
     return (
      <div>
-       <Level />
+      <Template />
      </div>
     );
    }

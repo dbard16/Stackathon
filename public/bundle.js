@@ -261,7 +261,7 @@ process.umask = function() { return 0; };
 
 
 var bind = __webpack_require__(17);
-var isBuffer = __webpack_require__(43);
+var isBuffer = __webpack_require__(44);
 
 /*global toString:true*/
 
@@ -1003,7 +1003,7 @@ module.exports = ExecutionEnvironment;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(1);
-var normalizeHeaderName = __webpack_require__(45);
+var normalizeHeaderName = __webpack_require__(46);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -1388,12 +1388,12 @@ module.exports = function bind(fn, thisArg) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(1);
-var settle = __webpack_require__(46);
-var buildURL = __webpack_require__(48);
-var parseHeaders = __webpack_require__(49);
-var isURLSameOrigin = __webpack_require__(50);
+var settle = __webpack_require__(47);
+var buildURL = __webpack_require__(49);
+var parseHeaders = __webpack_require__(50);
+var isURLSameOrigin = __webpack_require__(51);
 var createError = __webpack_require__(19);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(51);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(52);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -1491,7 +1491,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(52);
+      var cookies = __webpack_require__(53);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -1576,7 +1576,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(47);
+var enhanceError = __webpack_require__(48);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -21885,9 +21885,9 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Level = __webpack_require__(40);
+var _Template = __webpack_require__(40);
 
-var _Level2 = _interopRequireDefault(_Level);
+var _Template2 = _interopRequireDefault(_Template);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21896,6 +21896,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import Level from './Level';
+
 
 var Main = function (_Component) {
   _inherits(Main, _Component);
@@ -21912,7 +21914,7 @@ var Main = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Level2.default, null)
+        _react2.default.createElement(_Template2.default, null)
       );
     }
   }]);
@@ -21939,7 +21941,88 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(41);
+var _Level = __webpack_require__(41);
+
+var _Level2 = _interopRequireDefault(_Level);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Template = function (_Component) {
+  _inherits(Template, _Component);
+
+  function Template(props) {
+    _classCallCheck(this, Template);
+
+    var _this = _possibleConstructorReturn(this, (Template.__proto__ || Object.getPrototypeOf(Template)).call(this, props));
+
+    _this.state = {
+      currentLevel: 1
+
+    };
+    _this.changeLevel = _this.changeLevel.bind(_this);
+    return _this;
+  }
+
+  _createClass(Template, [{
+    key: 'changeLevel',
+    value: function changeLevel(level) {
+      this.setState({ currentLevel: level });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var xPos = this.state.currentLevel * 40 - 20;
+      var changeLevel = this.changeLevel;
+
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'svg',
+          null,
+          _react2.default.createElement('line', { x1: 20, y1: 20, x2: 200, y2: 20, stroke: 'black', strokeWidth: '10', strokeLinecap: 'round' }),
+          _react2.default.createElement('circle', { cx: xPos, cy: 20, r: 10, fill: 'red' }),
+          _react2.default.createElement(
+            'text',
+            { x: 15, y: 50, stroke: 'black' },
+            '1------2------3------4'
+          )
+        ),
+        _react2.default.createElement(_Level2.default, { changeLevel: changeLevel })
+      );
+    }
+  }]);
+
+  return Template;
+}(_react.Component);
+
+exports.default = Template;
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(42);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -21985,6 +22068,16 @@ var Level = function (_Component) {
     value: function componentDidMount() {
       var levelId = 1 || this.state.id;
       this.fetchLevel(levelId);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+
+      if (prevState !== undefined) {
+        if (prevState.level.id !== this.state.level.id) {
+          this.props.changeLevel(this.state.level.id);
+        }
+      }
     }
   }, {
     key: 'handleClick',
@@ -22049,13 +22142,13 @@ var Level = function (_Component) {
 exports.default = Level;
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(42);
+module.exports = __webpack_require__(43);
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22063,7 +22156,7 @@ module.exports = __webpack_require__(42);
 
 var utils = __webpack_require__(1);
 var bind = __webpack_require__(17);
-var Axios = __webpack_require__(44);
+var Axios = __webpack_require__(45);
 var defaults = __webpack_require__(11);
 
 /**
@@ -22098,14 +22191,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(21);
-axios.CancelToken = __webpack_require__(58);
+axios.CancelToken = __webpack_require__(59);
 axios.isCancel = __webpack_require__(20);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(59);
+axios.spread = __webpack_require__(60);
 
 module.exports = axios;
 
@@ -22114,7 +22207,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 /*!
@@ -22141,7 +22234,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22149,8 +22242,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(11);
 var utils = __webpack_require__(1);
-var InterceptorManager = __webpack_require__(53);
-var dispatchRequest = __webpack_require__(54);
+var InterceptorManager = __webpack_require__(54);
+var dispatchRequest = __webpack_require__(55);
 
 /**
  * Create a new instance of Axios
@@ -22227,7 +22320,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22246,7 +22339,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22279,7 +22372,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22307,7 +22400,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22382,7 +22475,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22442,7 +22535,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22517,7 +22610,7 @@ module.exports = (
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22560,7 +22653,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22620,7 +22713,7 @@ module.exports = (
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22679,18 +22772,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(1);
-var transformData = __webpack_require__(55);
+var transformData = __webpack_require__(56);
 var isCancel = __webpack_require__(20);
 var defaults = __webpack_require__(11);
-var isAbsoluteURL = __webpack_require__(56);
-var combineURLs = __webpack_require__(57);
+var isAbsoluteURL = __webpack_require__(57);
+var combineURLs = __webpack_require__(58);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -22772,7 +22865,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22799,7 +22892,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22820,7 +22913,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22841,7 +22934,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22905,7 +22998,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
