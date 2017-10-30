@@ -25239,7 +25239,7 @@ exports.default = Main;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(process) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -25271,6 +25271,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var PORT = process.env.PORT || 1337;
+
 var Template = function (_Component) {
   _inherits(Template, _Component);
 
@@ -25282,7 +25284,7 @@ var Template = function (_Component) {
     _this.state = {
       currentLevel: 1,
       color: (0, _randomColor2.default)(),
-      socket: (0, _socket2.default)('http://localhost:1337'),
+      socket: (0, _socket2.default)(PORT),
       opponentLevel: 0
     };
     _this.changeLevel = _this.changeLevel.bind(_this);
@@ -25360,6 +25362,7 @@ var Template = function (_Component) {
 }(_react.Component);
 
 exports.default = Template;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 63 */

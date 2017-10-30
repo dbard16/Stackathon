@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Level from './Level'
 import socketIOClient from 'socket.io-client';
 import randomColor from 'randomColor'
+const PORT = process.env.PORT  || 1337;
 
 
 export default class Template extends Component {
@@ -10,7 +11,7 @@ export default class Template extends Component {
     this.state = {
       currentLevel: 1,
       color: randomColor(),
-      socket: socketIOClient('http://localhost:1337'),
+      socket: socketIOClient(PORT),
       opponentLevel: 0
     }
     this.changeLevel = this.changeLevel.bind(this);
