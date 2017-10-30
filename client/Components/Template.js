@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Level from './Level'
 import socketIOClient from 'socket.io-client';
-import randomColor from 'randomColor'
+import randomColor from 'randomcolor'
 const PORT = process.env.PORT  || 1337;
 
 
