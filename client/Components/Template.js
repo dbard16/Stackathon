@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Level from './Level'
 import socketIOClient from 'socket.io-client';
 import randomColor from 'randomcolor'
+import Timer from './Timer'
+
+
 
 
 
@@ -14,8 +17,11 @@ export default class Template extends Component {
       socket: socketIOClient(),
       opponentLevel: 0
     }
-    this.changeLevel = this.changeLevel.bind(this);
 
+
+
+
+    this.changeLevel = this.changeLevel.bind(this);
     this.listenLevel = this.listenLevel.bind(this);
   }
   componentDidMount(){
@@ -23,6 +29,7 @@ export default class Template extends Component {
       socket.on('connect', () => {
       console.log('Client connected')})
       this.listenLevel();
+
   }
   changeLevel(level){
     this.setState({currentLevel: level})
@@ -50,7 +57,7 @@ export default class Template extends Component {
     const { color, opponentLevel } = this.state
     console.log(opponentLevel);
 
-
+    // console.log(stopwatch);
     return (
      <div className="well">
 
@@ -61,8 +68,11 @@ export default class Template extends Component {
         <text x={15} y={50} stroke="black">1------2------3------4</text>
         {/*<circle cx={60} cy={20} r={10} fill="blue" /> */}
       </svg>
+
       <div>
-        Opponent just finished { opponentLevel }! Hurry up!
+        <Timer />
+        { opponentLevel > 0 ? <h3>Opponent just finished level { opponentLevel }! Hurry up! </h3> : ''
+      }
       </div>
       <Level changeLevel={ changeLevel }/>
     </div>
