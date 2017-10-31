@@ -51,16 +51,16 @@ export default class Level extends Component {
     const { handleClick } = this;
 
     return (
-      <div>
-      <h1> Level {level.id} </h1>
-        <div>
+      <div className='panel panel-default'>
+      <h1 className='panel-heading'> Level {level.id} </h1>
+        <div className='panel-body'>
           { level.description }
         </div>
         { options ?
           options.map(option => {
             return (
               <div key={option.id}>
-                <button className="btn" onClick={ ()=> handleClick(option.answerText, option.goToLevel) }> {option.description} </button>
+                <button className="btn"  onClick={ ()=> handleClick(option.answerText, option.goToLevel) }> {option.description} </button>
               </div>
             )
           }) : ''

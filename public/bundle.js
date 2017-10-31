@@ -25263,7 +25263,7 @@ var _randomcolor = __webpack_require__(103);
 
 var _randomcolor2 = _interopRequireDefault(_randomcolor);
 
-var _Timer = __webpack_require__(105);
+var _Timer = __webpack_require__(104);
 
 var _Timer2 = _interopRequireDefault(_Timer);
 
@@ -25341,12 +25341,12 @@ var Template = function (_Component) {
         _react2.default.createElement(
           'svg',
           null,
-          _react2.default.createElement('line', { x1: 20, y1: 20, x2: 200, y2: 20, stroke: 'black', strokeWidth: '10', strokeLinecap: 'round' }),
+          _react2.default.createElement('line', { x1: 20, y1: 20, x2: 265, y2: 20, stroke: 'black', strokeWidth: '10', strokeLinecap: 'round' }),
           _react2.default.createElement('circle', { cx: xPos, cy: 20, r: 10, fill: color }),
           _react2.default.createElement(
             'text',
             { x: 15, y: 50, stroke: 'black' },
-            '1------2------3------4'
+            '1------2------3------4------5------6------7'
           )
         ),
         _react2.default.createElement(
@@ -25461,17 +25461,17 @@ var Level = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'panel panel-default' },
         _react2.default.createElement(
           'h1',
-          null,
+          { className: 'panel-heading' },
           ' Level ',
           level.id,
           ' '
         ),
         _react2.default.createElement(
           'div',
-          null,
+          { className: 'panel-body' },
           level.description
         ),
         options ? options.map(function (option) {
@@ -29941,8 +29941,7 @@ Backoff.prototype.setJitter = function(jitter){
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(38)(module)))
 
 /***/ }),
-/* 104 */,
-/* 105 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29999,7 +29998,7 @@ var Timer = function (_Component) {
         _react2.default.createElement(
           'h4',
           null,
-          ' It\'s already taken you ',
+          ' You\'ve wasted ',
           this.state.secondsElapsed,
           ' seconds and you\'re only this far?!'
         )

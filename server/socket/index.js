@@ -4,7 +4,6 @@ module.exports = io => {
     console.log(' A client has connected! Client ID: ', socket.id);
 
     socket.on('send-level', (level) =>{
-      console.log('received', level);
       socket.broadcast.emit('update-level', level)
     })
   })

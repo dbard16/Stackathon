@@ -20,8 +20,7 @@ export default class Timer extends Component {
 
     return(
       <div>
-
-        <h4> It's already taken you {this.state.secondsElapsed} seconds and you're only this far?!</h4>
+        <h4> You've wasted {this.state.secondsElapsed} seconds and you're only this far?!</h4>
 
       </div>
     )

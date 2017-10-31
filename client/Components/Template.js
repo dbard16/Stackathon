@@ -62,10 +62,10 @@ export default class Template extends Component {
      <div className="well">
 
       <svg>
-        <line x1={20} y1={20} x2={200} y2={20} stroke="black" strokeWidth="10" strokeLinecap="round" />
+        <line x1={20} y1={20} x2={265} y2={20} stroke="black" strokeWidth="10" strokeLinecap="round" />
         <circle cx={xPos} cy={20} r={10} fill={ color } />
 
-        <text x={15} y={50} stroke="black">1------2------3------4</text>
+        <text x={15} y={50} stroke="black">1------2------3------4------5------6------7</text>
         {/*<circle cx={60} cy={20} r={10} fill="blue" /> */}
       </svg>
 
