@@ -21,14 +21,14 @@ const seed = () => {
      Level.create({description: 'The door seems to be shut tight'}),
      Level.create({description: 'Walking in, you see 3 doors to your left, and a giant, glowing portal to your right'})
      ])
-    .then(levels => {
-      level1 = levels[0];
-      level2 = levels[1];
-      level3 = levels[2];
-      level4 = levels[3];
-      level5 = levels[4];
-      level6 = levels[5];
-      level7 = levels[6];
+    .then(([_level1, _level2, _level3, _level4, _level5, _level6, _level7]) => {
+      level1 = _level1;
+      level2 = _level2;
+      level3 = _level3;
+      level4 = _level4;
+      level5 = _level5;
+      level6 = _level6;
+      level7 = _level7;
     })
     .then(() => {
       return Promise.all([
