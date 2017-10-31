@@ -12,7 +12,7 @@ export default class Template extends Component {
   constructor(props){
     super(props);
     this.state = {
-      currentLevel: 1,
+      currentLevel: 0,
       color: randomColor(),
       socket: socketIOClient(),
       opponentLevel: 0

@@ -23,7 +23,7 @@ export default class Level extends Component {
   }
 
   componentDidMount(){
-    const levelId = 1 || this.state.id
+    const levelId = 0 || this.state.id
     this.fetchLevel(levelId)
   }
 
