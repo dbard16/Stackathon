@@ -1,0 +1,14 @@
+html,
+h1{
+  font-family: "Permanent Marker";
+}
+
+.leveldesc{
+  font-family:"Princess Sofia";
+  font-size: 3.5em;
+}
+ .rows .row {
+    display: inline-block;
+    padding-right:2.5em;
+    padding-left: 2.5em;
+ }

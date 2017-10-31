@@ -25471,24 +25471,28 @@ var Level = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'panel-body' },
+          { className: 'panel-body leveldesc' },
           level.description
         ),
-        options ? options.map(function (option) {
-          return _react2.default.createElement(
-            'div',
-            { key: option.id },
-            _react2.default.createElement(
-              'button',
-              { className: 'btn', onClick: function onClick() {
-                  return handleClick(option.answerText, option.goToLevel);
-                } },
-              ' ',
-              option.description,
-              ' '
-            )
-          );
-        }) : ''
+        _react2.default.createElement(
+          'div',
+          { className: 'rows' },
+          options ? options.map(function (option) {
+            return _react2.default.createElement(
+              'div',
+              { className: 'row', key: option.id },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn', onClick: function onClick() {
+                    return handleClick(option.answerText, option.goToLevel);
+                  } },
+                ' ',
+                option.description,
+                ' '
+              )
+            );
+          }) : ''
+        )
       );
     }
   }]);
